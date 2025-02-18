@@ -1,4 +1,6 @@
 response = ''
+LOW = 5
+HIGH = 100
 loop = True
 def int_checker(question, int_type, exit_code):
     global loop
@@ -34,8 +36,16 @@ def int_checker(question, int_type, exit_code):
 
 while loop == True:
     test_int = int_checker("Enter a number greater than 0:\n", "integer", "xxx")
-    if test_int != '':
-        print(f"You entered {test_int}")
+    if LOW > test_int:
+        print(f"{test_int} is too low")
+    elif HIGH < test_int:
+        print(f"{test_int} is too high")
+    else:
+        print(f"{test_int} is a valid integer")
     test_float = int_checker("Enter a float greater than 0:\n", "float", "xxx")
-    if test_float != '':
-        print(f"You entered {test_float}")
+    if LOW > test_float:
+        print(f"{test_float} is too low")
+    elif HIGH < test_float:
+        print(f"{test_float} is too high")
+    else:
+        print(f"{test_float} is a valid float")
